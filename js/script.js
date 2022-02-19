@@ -55,13 +55,16 @@ form.addEventListener("submit", function (event) {
   if (range < 18.5) {
     document.querySelector("#rangeBMI").innerHTML = "UnderWeight";
     document.querySelector("#rangeBMI").style.backgroundColor = "yellow";
-  } else if (18.5 <= range < 25) {
+  }
+  if (18.5 <= range < 25) {
     document.querySelector("#rangeBMI").innerHTML = "Normal";
     document.querySelector("#rangeBMI").style.backgroundColor = "green";
-  } else if (25 < range < 30) {
+  }
+  if (25 <= range < 30) {
     document.querySelector("#rangeBMI").innerHTML = "OverWieght";
     document.querySelector("#rangeBMI").style.backgroundColor = "orange";
-  } else {
+  }
+  if (30 <= range) {
     document.querySelector("#rangeBMI").innerHTML = "Obese";
     document.querySelector("#rangeBMI").style.backgroundColor = "red";
   }
