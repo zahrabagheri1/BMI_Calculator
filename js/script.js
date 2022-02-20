@@ -52,21 +52,22 @@ form.addEventListener("submit", function (event) {
 
   //   ! deermine the range BMI
   const range = calculatorBMI(height, weight);
-  if (range < 18.5) {
+  if (range <= 18.5) {
     document.querySelector("#rangeBMI").innerHTML = "UnderWeight";
     document.querySelector("#rangeBMI").style.backgroundColor = "yellow";
-  }
-  if (18.5 <= range < 25) {
+    return false;
+  } else if (18.5 < range && range <= 25) {
     document.querySelector("#rangeBMI").innerHTML = "Normal";
     document.querySelector("#rangeBMI").style.backgroundColor = "green";
-  }
-  if (25 <= range < 30) {
+    return false;
+  } else if (25 < range && range <= 30) {
     document.querySelector("#rangeBMI").innerHTML = "OverWieght";
     document.querySelector("#rangeBMI").style.backgroundColor = "orange";
-  }
-  if (30 <= range) {
+    return false;
+  } else {
     document.querySelector("#rangeBMI").innerHTML = "Obese";
     document.querySelector("#rangeBMI").style.backgroundColor = "red";
+    return false;
   }
 });
 
